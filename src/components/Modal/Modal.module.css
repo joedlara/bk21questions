@@ -1,0 +1,144 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 24px;
+  padding: 50px;
+  max-width: 550px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modalHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.modalHeader h3 {
+  font-size: 28px;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.modalHeader p {
+  font-size: 16px;
+  color: #64748b;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.formGroup input:disabled {
+  background: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.modalSubmitButton {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.modalSubmitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+}
+
+.modalSubmitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  display: none;
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.successMessage.active {
+  display: block;
+}
+
+.successIcon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.successMessage h3 {
+  font-size: 28px;
+  color: #1e293b;
+  margin-bottom: 15px;
+}
+
+.successMessage p {
+  font-size: 17px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 30px 20px;
+  }
+}

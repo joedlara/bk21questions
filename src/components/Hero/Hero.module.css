@@ -1,0 +1,120 @@
+.heroSection {
+  position: relative;
+  height: 400px;
+  background: linear-gradient(
+    135deg,
+    rgba(243, 232, 255, 0.6) 0%,
+    rgba(219, 234, 254, 0.6) 50%,
+    rgba(254, 249, 195, 0.6) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.heroTitle {
+  font-size: 56px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 15px;
+}
+
+.heroSubtitle {
+  font-size: 24px;
+  color: #475569;
+  font-weight: 400;
+}
+
+.gradientText {
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroButtonContainer {
+  display: none;
+  margin-top: 25px;
+}
+
+.bookCallBtn {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.bookCallBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    height: auto;
+    min-height: 350px;
+    padding: 40px 20px;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+  }
+
+  .heroSubtitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .heroButtonContainer {
+    display: block;
+  }
+
+  .heroSection {
+    min-height: 400px;
+  }
+
+  .heroTitle {
+    font-size: 28px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .heroSubtitle {
+    font-size: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 380px) {
+  .heroTitle {
+    font-size: 24px;
+  }
+
+  .heroSubtitle {
+    font-size: 14px;
+  }
+
+  .bookCallBtn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
