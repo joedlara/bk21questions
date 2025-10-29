@@ -1,25 +1,25 @@
-import { useEffect, useRef, useState } from 'react';
-import { YOUTUBE_VIDEO_ID } from '../../utils/constants';
-import styles from './VideoSection.module.css';
+import { useEffect, useRef, useState } from "react"
+import { YOUTUBE_VIDEO_ID } from "../../utils/constants"
+import styles from "./VideoSection.module.css"
 
 const VideoSection = () => {
-  const [player, setPlayer] = useState(null);
-  const [isUnmuted, setIsUnmuted] = useState(false);
-  const [showOverlay, setShowOverlay] = useState(true);
-  const playerRef = useRef(null);
+  const [player, setPlayer] = useState(null)
+  const [isUnmuted, setIsUnmuted] = useState(false)
+  const [showOverlay, setShowOverlay] = useState(true)
+  const playerRef = useRef(null)
 
   useEffect(() => {
     // Load YouTube IFrame API
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    const tag = document.createElement("script")
+    tag.src = "https://www.youtube.com/iframe_api"
+    const firstScriptTag = document.getElementsByTagName("script")[0]
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
     // YouTube API ready callback
     window.onYouTubeIframeAPIReady = () => {
       const ytPlayer = new window.YT.Player(playerRef.current, {
-        height: '100%',
-        width: '100%',
+        height: "100%",
+        width: "100%",
         videoId: YOUTUBE_VIDEO_ID,
         playerVars: {
           autoplay: 0,
@@ -38,48 +38,48 @@ const VideoSection = () => {
         events: {
           onStateChange: (event) => {
             if (event.data === window.YT.PlayerState.PLAYING && isUnmuted) {
-              setShowOverlay(false);
+              setShowOverlay(false)
             }
           },
         },
-      });
-      setPlayer(ytPlayer);
-    };
+      })
+      setPlayer(ytPlayer)
+    }
 
     return () => {
       if (player && player.destroy) {
-        player.destroy();
+        player.destroy()
       }
-    };
-  }, []);
+    }
+  }, [])
 
   const handleVideoClick = () => {
     if (!isUnmuted && player) {
-      player.playVideo();
-      player.unMute();
-      player.setVolume(75);
-      setIsUnmuted(true);
-      setShowOverlay(false);
+      player.playVideo()
+      player.unMute()
+      player.setVolume(75)
+      setIsUnmuted(true)
+      setShowOverlay(false)
 
       // Update to show controls
       player.loadVideoById({
         videoId: YOUTUBE_VIDEO_ID,
         startSeconds: 0,
-        suggestedQuality: 'large',
-      });
+        suggestedQuality: "large",
+      })
 
       setTimeout(() => {
-        const iframe = playerRef.current?.querySelector('iframe');
+        const iframe = playerRef.current?.querySelector("iframe")
         if (iframe) {
-          let src = iframe.src;
-          src = src.replace('controls=0', 'controls=1');
-          src = src.replace('disablekb=1', 'disablekb=0');
-          src = src.replace('fs=0', 'fs=1');
-          iframe.src = src;
+          let src = iframe.src
+          // src = src.replace("controls=0", "controls=1")
+          src = src.replace("disablekb=1", "disablekb=0")
+          src = src.replace("fs=0", "fs=1")
+          iframe.src = src
         }
-      }, 100);
+      }, 100)
     }
-  };
+  }
 
   return (
     <div className={styles.videoSection}>
@@ -93,19 +93,23 @@ const VideoSection = () => {
       </div>
       <div className={styles.videoWrapper}>
         <div
-          className={`${styles.videoContainer} ${isUnmuted ? styles.unmuted : ''}`}
+          className={`${styles.videoContainer} ${
+            isUnmuted ? styles.unmuted : ""
+          }`}
           onClick={handleVideoClick}
         >
           <div ref={playerRef} />
           <div
-            className={`${styles.playButtonOverlay} ${showOverlay ? '' : styles.hidden}`}
+            className={`${styles.playButtonOverlay} ${
+              showOverlay ? "" : styles.hidden
+            }`}
           >
             <div className={styles.customPlayButton} />
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default VideoSection;
+export default VideoSection

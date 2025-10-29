@@ -2,12 +2,13 @@
   background: #1e293b;
   border-radius: 20px;
   padding: 30px;
-  margin-bottom: 50px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
 }
 
 .videoContent {
@@ -105,7 +106,7 @@
 }
 
 .customPlayButton::after {
-  content: '';
+  content: "";
   width: 0;
   height: 0;
   border-left: 24px solid #1e293b;

@@ -137,6 +137,25 @@
   line-height: 1.7;
 }
 
+.scheduleButton {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.scheduleButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
 @media (max-width: 768px) {
   .modalContent {
     padding: 30px 20px;
