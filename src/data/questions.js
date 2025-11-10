@@ -7,7 +7,7 @@ export const questionSections = [
       "Do you capture negative feedback privately before it becomes public?",
       "Are you currently responding to 100% of your online reviews - both positive and negative - within the same day?",
       "Are your patients writing detailed reviews highlighting your expertise for potential new patients and AI search?",
-      "“If a patient has already left a review, does your system keep asking them to write another one on a different platform?",
+      "If a patient has already left a review, does your system keep asking them to write another one on a different platform?",
       "Are you tracking your review growth month-over-month across all platforms in one easy-to-read dashboard?",
     ],
   },
