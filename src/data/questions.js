@@ -26,7 +26,7 @@ export const questionSections = [
   {
     title: "Marketing Performance",
     questions: [
-      "Are you being recommended by search and AI for high-value services like Invisalign or implants?",
+      `When patients search "Best Dentist" in your nearby cities within 15 minute-drive, do you show up as top 3?`,
       "Are you attracting implant, veneer, or full-arch cases organically without high ad spend?",
       "Can you track how many new patients came from your website last month?",
       "Do you know which reviews and keywords drive the highest-value patients?",
