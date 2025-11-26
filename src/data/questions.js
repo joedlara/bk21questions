@@ -17,7 +17,7 @@ export const questionSections = [
       "Is your contact information is actively monitored and updated across the web for accuracy and SEO impact?",
       "Do you appear in the top 3 Google and Map search results when someone searches for a dentist in your city?",
       "Is your practice the top AI-recommended option when someone asks ChatGPT, Siri, or Gemini for the best implant or cosmetic dentist in your area?",
-      'When patients search "Best Dentist in [City]," do you consistently show up?',
+      `When patients search "Best Dentist" in your nearby cities within 15 minute-drive, do you show up as top 3?`,
       'Do you rank in the top 3 Google results and AI summaries for high-converting keywords like "All on 4 near me," "dental implants," or "full mouth reconstruction"?',
       "Are patients saying they found you through Siri, ChatGPT, or other AI-powered search assistants?",
       "Are you seeing organic SEO growth every month?",
